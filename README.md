@@ -15,22 +15,28 @@ A Dijkstra's Algorithm Visualizer written in C using OpenGL graphics library.
 
 ## Dependencies 
 
-- Linux (Ubuntu) 
+- GCC
+- Make
+- FreeGlut3
+
+## Packages installation (e.g. Ubuntu)
 
 ```bash
-$ sudo apt-get install freeglut3-dev
+$ sudo apt-get install gcc make freeglut3-dev
 
 ```
 
 ## Execute 
 
-- Linux 
+#### Linux 
+
+You are good to go! Just use make
 
 ```bash
 $ make
 
 ```
-- Docker
+#### Docker
 
 To run the GUI application using Docker from WSL in Windows, make sure to have docker installed and also garantee that the user's inside the docker group. 
 
@@ -38,7 +44,7 @@ To run the GUI application using Docker from WSL in Windows, make sure to have d
 If you are in WSL, you can run the command below:
 
 ```bash
-$ docker build -t dijkstra .
+$ docker build --rm -t dijkstra .
 $ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix \
                     -v /mnt/wslg:/mnt/wslg \
                     -e DISPLAY \
