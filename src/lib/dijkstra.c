@@ -403,7 +403,6 @@ void dijkstra()
 
 		visited[u] = TRUE;
 
-    printf("%c\n", u + 65);
 		//loop through all the nodes finding its neighbours
 		for(int v = 0; v < djk->nodeCount; v++)
 		{
@@ -424,17 +423,17 @@ void dijkstra()
   delay(500);
 
   // DEBUG purpose 
-	printf("node(i)\t\tdistance\tprevious\tselected\n");
-	for(int i = 0; i < djk->nodeCount; i++)
-	{
-		printf("%c\t\t%d\t\t%c\t\t%d\n",65+i, dist[i], ((prev[i] != -1)? 65+prev[i] : ' ') , visited[i]);
-	}
+  #ifdef DEBUG
+    printf("node(i)\t\tdistance\tprevious\tselected\n");
+    for(int i = 0; i < djk->nodeCount; i++)
+    {
+      printf("%c\t\t%d\t\t%c\t\t%d\n",65+i, dist[i], ((prev[i] != -1)? 65+prev[i] : ' ') , visited[i]);
+    }
+  #endif
 }
 
 void initDijkstra(unsigned char key, int x, int y)
 {
-	printf("%d\n",key);
-
 	//if source or destination nodes are not selected dont start
 	if(!source|| !destination)
 	{	
